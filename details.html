@@ -2,14 +2,25 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Batch Details</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="details-container">
-      <a href="index.html" class="back-btn">← Back to Dashboard</a>
+    <nav class="navbar">
+      <div class="nav-container">
+        <h1>📦 Batch Details</h1>
+        <div class="nav-user">
+          <span id="nav-username"></span>
+          <span id="nav-role" class="role-badge"></span>
+          <button onclick="logout()" class="logout-btn">Logout</button>
+        </div>
+      </div>
+    </nav>
 
-      <h1>Batch Details</h1>
+    <div class="main-container">
+      <div class="details-container">
+        <a href="index.html" class="back-btn">← Back to Dashboard</a>
 
       <div id="batch-details">
         <div class="detail-card">
@@ -33,9 +44,9 @@
             <span class="detail-value" id="detail-status"></span>
           </div>
 
-          <div class="detail-actions">
-            <button onclick="editBatch()" class="edit-btn">Edit</button>
-            <button onclick="deleteBatchFromDetails()" class="delete-btn">
+          <div class="detail-actions" id="detail-actions">
+            <button onclick="editBatch()" class="edit-btn" id="edit-btn">Edit</button>
+            <button onclick="deleteBatchFromDetails()" class="delete-btn" id="delete-btn">
               Delete
             </button>
           </div>
@@ -57,8 +68,10 @@
       <div id="not-found" style="display: none">
         <p>Batch not found. <a href="index.html">Return to dashboard</a></p>
       </div>
+      </div>
     </div>
 
+    <script src="auth.js"></script>
     <script src="details.js"></script>
   </body>
 </html>

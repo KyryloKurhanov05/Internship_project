@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Activity Logs - Inspection Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <h1>📋 Activity Logs</h1>
+    <div class="nav-user">
+      <span id="nav-username"></span>
+      <span id="nav-role" class="role-badge"></span>
+      <button onclick="logout()" class="logout-btn">Logout</button>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <div class="page-header">
+    <a href="index.html" class="back-btn">← Back to Dashboard</a>
+    <div class="header-actions">
+      <button onclick="clearLogs()" class="danger-btn">Clear All Logs</button>
+      <button onclick="exportLogs()" class="export-btn">📥 Export Logs</button>
+    </div>
+  </div>
+
+  <div class="logs-filters">
+    <input type="text" id="log-search" placeholder="Search logs...">
+    <select id="log-filter">
+      <option value="all">All Actions</option>
+      <option value="login">Login/Logout</option>
+      <option value="batch">Batch Operations</option>
+      <option value="export">Exports</option>
+    </select>
+  </div>
+
+  <div id="logs-container">
+    <div class="logs-list" id="logs-list"></div>
+  </div>
+</div>
+
+<script src="auth.js"></script>
+<script src="logs.js"></script>
+</body>
+</html>

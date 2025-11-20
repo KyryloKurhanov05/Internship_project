@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Inspection Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Inspection Dashboard</h1>
+
+<div class="summary">
+  <div class="card">Total Checked: <span id="total"></span></div>
+  <div class="card ok">Passed: <span id="passed"></span></div>
+  <div class="card fail">Failed: <span id="failed"></span></div>
+</div>
+
+<h2>Batch List</h2>
+<div class="filters">
+  <button onclick="filterBatches('all')">All</button>
+  <button onclick="filterBatches('OK')">Passed</button>
+  <button onclick="filterBatches('FAIL')">Failed</button>
+</div>
+
+<div id="batch-list"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

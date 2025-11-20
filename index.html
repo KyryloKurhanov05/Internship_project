@@ -1,28 +1,54 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Inspection Dashboard</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<h1>Inspection Dashboard</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Inspection Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Inspection Dashboard</h1>
 
-<div class="summary">
-  <div class="card">Total Checked: <span id="total"></span></div>
-  <div class="card ok">Passed: <span id="passed"></span></div>
-  <div class="card fail">Failed: <span id="failed"></span></div>
-</div>
+    <div class="summary">
+      <div class="card">Total Checked: <span id="total"></span></div>
+      <div class="card ok">Passed: <span id="passed"></span></div>
+      <div class="card fail">Failed: <span id="failed"></span></div>
+    </div>
 
-<h2>Batch List</h2>
-<div class="filters">
-  <button onclick="filterBatches('all')">All</button>
-  <button onclick="filterBatches('OK')">Passed</button>
-  <button onclick="filterBatches('FAIL')">Failed</button>
-</div>
+    <div class="add-batch-section">
+      <h2>Add New Batch</h2>
+      <form id="add-batch-form">
+        <input
+          type="text"
+          id="batch-number"
+          placeholder="Batch Number"
+          required
+        />
+        <select id="batch-result" required>
+          <option value="">Select Result</option>
+          <option value="OK">Passed</option>
+          <option value="FAIL">Failed</option>
+        </select>
+        <input type="date" id="batch-date" required />
+        <button type="submit">Add Batch</button>
+      </form>
+    </div>
 
-<div id="batch-list"></div>
+    <h2>Batch List</h2>
+    <div class="search-filters">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search by batch number..."
+      />
+      <div class="filters">
+        <button onclick="filterBatches('all')" class="active">All</button>
+        <button onclick="filterBatches('OK')">Passed</button>
+        <button onclick="filterBatches('FAIL')">Failed</button>
+      </div>
+    </div>
 
-<script src="script.js"></script>
-</body>
+    <div id="batch-list"></div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
